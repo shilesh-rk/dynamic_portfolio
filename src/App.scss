@@ -1,0 +1,163 @@
+// Google font
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+@import './variables.scss';
+
+// Responsive Typography
+@media screen and (max-width: 992px) {
+    $big-font-size: 2.75rem;
+    $h1-font-size: 1.5rem;
+    $h2-font-size: 1.25rem;
+    $h3-font-size: 1rem;
+    $normal-font-size: 0.938rem;
+    $small-font-size: 0.813rem;
+    $smaller-font-size: 0.75rem;
+}
+
+// Base
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+textarea {
+    font-size: $normal-font-size;
+}
+
+body {
+    background-color: $body-color;
+    color: $text-color;
+}
+
+h1,
+h2,
+h3 {
+    color: $title-color;
+    font-weight: $font-semi-bold;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: $text-color;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+// CSS reusable classes
+.section {
+    padding: 4rem 0 2rem;
+}
+
+.section_title {
+    font-size: $h1-font-size;
+    color: $container-color;
+}
+
+.section_subtitle {
+    display: block;
+    font-size: $small-font-size;
+    margin-bottom: 4rem;
+}
+
+.section_title,
+.section_subtitle {
+    text-align: center;
+}
+
+// Layout
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+// Buttons
+.button {
+    display: inline-block;
+    background-color: transparent;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: $container-color;
+        border: 0.5px solid $container-color;
+    
+    &:hover {
+        color: #fff;
+        border: 0.5px solid #fff;
+    }
+    }
+
+
+.button_icon {
+    margin-left: $mb-0-5;
+}
+
+
+
+// Breakpoints
+// For large devices
+@media screen and (max-width: 992px) {
+    .container {
+        margin-left: $mb-1-5;
+        margin-right: $mb-1-5;
+    }
+
+    .button {
+        padding: 1rem 1.75rem;
+    }
+
+    .button_icon {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+// For medium devices
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0 0 $header-height 0;
+    }
+
+    .section {
+        padding: 2rem 0 4rem;
+    }
+
+    .section_subtitle {
+        margin-bottom: $mb-3;
+    }
+}
+
+// For small devices
+@media screen and (max-width: 350px) {
+    $big-font-size: 2.25rem;
+
+    .container {
+        margin-left: $mb-1;
+        margin-right: $mb-1;
+    }
+}
+

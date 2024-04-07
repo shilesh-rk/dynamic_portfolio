@@ -1,0 +1,175 @@
+@import '../../variables.scss';
+
+.hero_content {
+    grid-template-columns: 116px repeat(2, 1fr);
+    padding-top: 5.5rem;
+    column-gap: 2rem;
+    align-items: center;
+
+    .hero_scroll {
+        margin-left: 9.25rem;
+
+        @keyframes scroll {
+            0% {
+                transform: translateY(0);
+            }
+
+            30% {
+                transform: translateY(1.75rem);
+            }
+        }
+
+        animation: scroll 2s ease infinite;
+    }
+
+    .hero_scroll-name {
+        color: $title-color;
+        font-weight: $font-medium;
+        margin-right: $mb-0-25;
+        margin-left: 2px;
+    }
+}
+
+.hero_container {
+    row-gap: 7rem;
+}
+
+.hero_social {
+    display: grid;
+    grid-template-columns: max-content;
+    row-gap: 1rem;
+}
+
+.hero_social-icon {
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+.hero_social-icon:hover {
+    color: $title-color-dark;
+}
+
+.hero_title {
+    color: $container-color;
+    font-size: $big-font-size;
+    margin-bottom: $mb-0-25;
+}
+
+.hero_subtitle {
+    position: relative;
+    color: $title-color-dark;
+    font-size: $h3-font-size;
+    padding-left: 5.4rem;
+    font-weight: $font-normal;
+    margin-bottom: $mb-1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        width: 10%;
+        margin-left: 0.5rem;
+        height: 1px;
+        background-color: $text-color;
+        left: 0;
+        bottom: 0.5rem;
+    }
+}
+
+.hero_description {
+    max-width: 400px;
+    margin-bottom: $mb-3;
+}
+
+.hero_img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 0 0 9px rgba(255, 255, 255, 0.3);
+    border: 5px dashed $container-color;
+    justify-self: center;
+    width: 300px;
+    height: 300px;
+    animation: profile_animation 8s ease-in-out infinite 1s;
+
+    @keyframes profile_animation {
+        0% {
+            border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        }
+
+        50% {
+            border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+        }
+
+        100% {
+            border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+        }
+    }
+}
+
+.hero_scroll {
+    margin-left: 9.25rem;
+}
+
+/* Breakpoints */
+/* For large devices */
+@media screen and (max-width: 992px) {
+    .hero_content {
+        grid-template-columns: 100px repeat(2, 1fr);
+        column-gap: 1.25rem;
+    }
+
+    .hero_subtitle {
+        padding-left: 3.75rem;
+        margin-bottom: $mb-1;
+
+        &::before {
+            width: 42px;
+            top: 0.8rem;
+        }
+    }
+
+    .hero_description {
+        max-width: initial;
+        margin-bottom: $mb-0-5;
+    }
+
+    .hero_img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .hero_scroll {
+        margin-left: 7.5rem;
+    }
+}
+
+/* For medium devices */
+@media screen and (max-width: 768px) {
+    .hero_content {
+        grid-template-columns: 0.5fr 3fr;
+        padding-top: 2rem;
+    }
+
+    .hero_img {
+        order: initial;
+        justify-content: initial;
+        width: 200px;
+        height: 200px;
+    }
+
+    .hero_data {
+        grid-column: 1/3;
+    }
+
+    .hero_scroll {
+        display: none;
+    }
+}
+
+/* For small devices */
+@media screen and (max-width: 350px) {
+    .hero_img {
+        width: 180px;
+        height: 180px;
+    }
+}
